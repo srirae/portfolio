@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
 import { Typescript } from "@/components/ui/svgs/typescript";
@@ -11,6 +11,7 @@ import { Docker } from "@/components/ui/svgs/docker";
 import { Kubernetes } from "@/components/ui/svgs/kubernetes";
 import { Java } from "@/components/ui/svgs/java";
 import { Csharp } from "@/components/ui/svgs/csharp";
+import { Briefcase, FlaskConical, Flame, FileText, Link } from "lucide-react";
 
 export const DATA = {
   name: "Sri Vamsi Rajesh",
@@ -19,7 +20,7 @@ export const DATA = {
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   summary:
-    " I am a rising sophmore at [New Jersey Institute of Technology](https://www.njit.edu/) pursuing a degree in CS. I am currently learning [Rust 🦀](https://rust-lang.org/). In my free time, I like to commit to [opensource projects](/#project) and build projects ranging from an IPC framework to APIs. Currently focused on ...",
+    " I am a rising sophmore at [New Jersey Institute of Technology](https://www.njit.edu/) pursuing a degree in CS. I am currently learning [Go 🐹💙](https://go.dev/). In my free time, I like to commit to [opensource projects](/#project) and build projects ranging from an IPC framework to APIs. Currently focused on platform engineer and dev tools",
   avatarUrl: "/pic.jpeg",
   skills: [
     { name: "React", icon: ReactLight },
@@ -36,39 +37,16 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "#projects", icon: FlaskConical, label: "Projects" },
+    { href: "#experience", icon: Briefcase, label: "Experience" },
+    { href: "#streak", icon: Flame, label: "Streak" },
+    { href: "#resume", icon: FileText, label: "Resume" },
+    { href: "#links", icon: Link, label: "Links" },
   ],
   contact: {
     email: "hello@example.com",
     tel: "+123456789",
     social: {
-      GitHub: {
-        name: "GitHub",
-        url: "https://dub.sh/dillion-github",
-        icon: Icons.github,
-        navbar: true,
-      },
-
-      LinkedIn: {
-        name: "LinkedIn",
-        url: "https://dub.sh/dillion-linkedin",
-        icon: Icons.linkedin,
-
-        navbar: true,
-      },
-      X: {
-        name: "X",
-        url: "https://dub.sh/dillion-twitter",
-        icon: Icons.x,
-
-        navbar: true,
-      },
-      Youtube: {
-        name: "Youtube",
-        url: "https://dub.sh/dillion-youtube",
-        icon: Icons.youtube,
-        navbar: true,
-      },
       email: {
         name: "Send Email",
         url: "#",
