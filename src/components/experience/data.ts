@@ -26,8 +26,8 @@ export const EXPERIENCE_EVENTS: TimelineEvent[] = [
   },
   {
     id: "glaston-swe",
-    orgName: "Glaston Corporation",
-    role: "Software Support Engineer",
+    orgName: "Glaston",
+    role: "SSE",
     location: "Cherry Hill, NJ (Hybrid)",
     type: "WORK",
     startDate: "2025-12",
