@@ -1,17 +1,22 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon } from "lucide-react";
-import { ReactLight } from "@/components/ui/svgs/reactLight";
-import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
-import { Typescript } from "@/components/ui/svgs/typescript";
-import { Nodejs } from "@/components/ui/svgs/nodejs";
-import { Python } from "@/components/ui/svgs/python";
-import { Golang } from "@/components/ui/svgs/golang";
-import { Postgresql } from "@/components/ui/svgs/postgresql";
-import { Docker } from "@/components/ui/svgs/docker";
-import { Kubernetes } from "@/components/ui/svgs/kubernetes";
-import { Java } from "@/components/ui/svgs/java";
-import { Csharp } from "@/components/ui/svgs/csharp";
-import { Briefcase, FlaskConical, Flame, FileText, Link } from "lucide-react";
+import {
+  HomeIcon,
+  Briefcase,
+  FlaskConical,
+  FileText,
+  Sparkles,
+  Code2,
+  Server,
+  Database,
+  Container,
+  Network,
+  Coffee,
+  Braces,
+  FileJson,
+  GitBranch,
+  Cloud,
+  Wrench
+} from "lucide-react";
 
 export const DATA = {
   name: "Sri Vamsi Rajesh",
@@ -22,37 +27,76 @@ export const DATA = {
   summary:
     " I am a rising sophmore at [New Jersey Institute of Technology](https://www.njit.edu/) pursuing a degree in CS. I am currently learning [Go 🐹💙](https://go.dev/). In my free time, I like to commit to [opensource projects](/#project) and build projects ranging from an IPC framework to APIs. Currently focused on platform engineer and dev tools",
   avatarUrl: "/pic.jpeg",
-  skills: [
-    { name: "React", icon: ReactLight },
-    { name: "Next.js", icon: NextjsIconDark },
-    { name: "Typescript", icon: Typescript },
-    { name: "Node.js", icon: Nodejs },
-    { name: "Python", icon: Python },
-    { name: "Go", icon: Golang },
-    { name: "Postgres", icon: Postgresql },
-    { name: "Docker", icon: Docker },
-    { name: "Kubernetes", icon: Kubernetes },
-    { name: "Java", icon: Java },
-    { name: "C++", icon: Csharp },
-  ],
+  skills: {
+    "Languages": [
+      { name: "TypeScript", icon: FileJson },
+      { name: "Python", icon: Code2 },
+      { name: "Go", icon: Braces },
+      { name: "Java", icon: Coffee },
+      { name: "C++", icon: Code2 },
+    ],
+    "Frontend": [
+      { name: "React", icon: Code2 },
+      { name: "Next.js", icon: Network },
+      { name: "Tailwind CSS", icon: Code2 },
+    ],
+    "Backend & APIs": [
+      { name: "Node.js", icon: Server },
+      { name: "Express", icon: Server },
+      { name: "GraphQL", icon: Network },
+      { name: "REST APIs", icon: Network },
+    ],
+    "Infrastructure": [
+      { name: "Docker", icon: Container },
+      { name: "Kubernetes", icon: Network },
+      { name: "AWS", icon: Cloud },
+      { name: "Vercel", icon: Cloud },
+    ],
+    "Database": [
+      { name: "PostgreSQL", icon: Database },
+      { name: "MongoDB", icon: Database },
+      { name: "Redis", icon: Database },
+    ],
+    "Tools": [
+      { name: "Git", icon: GitBranch },
+      { name: "VS Code", icon: Wrench },
+      { name: "Postman", icon: Wrench },
+    ],
+  },
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "#projects", icon: FlaskConical, label: "Projects" },
-    { href: "#experience", icon: Briefcase, label: "Experience" },
-    { href: "#streak", icon: Flame, label: "Streak" },
-    { href: "#resume", icon: FileText, label: "Resume" },
-    { href: "#links", icon: Link, label: "Links" },
+    { href: "/projects", icon: FlaskConical, label: "Projects" },
+    { href: "/experience", icon: Briefcase, label: "Experience" },
+    { href: "/resume", icon: FileText, label: "Resume" },
+    { href: "/extra", icon: Sparkles, label: "Extra" },
   ],
   contact: {
     email: "hello@example.com",
     tel: "+123456789",
     social: {
+      github: {
+        name: "GitHub",
+        url: "https://github.com/srirae",
+        icon: Icons.github,
+        navbar: true,
+      },
       email: {
-        name: "Send Email",
-        url: "#",
+        name: "Email",
+        url: "mailto:srivamsirajesh@gmail.com",
         icon: Icons.email,
-
-        navbar: false,
+        navbar: true,
+      },
+      videocall: {
+        name: "Book a meeting",
+        url: "https://cal.com/srivamsirajesh",
+        icon: Icons.video,
+        navbar: true,
+      },
+      linkedin: {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/srivamsirajesh/",
+        icon: Icons.linkedin,
+        navbar: true,
       },
     },
   },
@@ -171,6 +215,7 @@ export const DATA = {
       href: "https://chatcollect.com",
       dates: "Jan 2024 - Feb 2024",
       active: true,
+      category: "apps",
       description:
         "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
       technologies: [
@@ -199,6 +244,7 @@ export const DATA = {
       href: "https://magicui.design",
       dates: "June 2023 - Present",
       active: true,
+      category: "tools",
       description:
         "Designed, developed and sold animated UI components for developers.",
       technologies: [
@@ -231,6 +277,7 @@ export const DATA = {
       href: "https://llm.report",
       dates: "April 2023 - September 2023",
       active: true,
+      category: "tools",
       description:
         "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
       technologies: [
@@ -264,6 +311,7 @@ export const DATA = {
       href: "https://automatic.chat",
       dates: "April 2023 - March 2024",
       active: true,
+      category: "apis",
       description:
         "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
       technologies: [
@@ -288,6 +336,13 @@ export const DATA = {
       video:
         "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
     },
+  ],
+  projectCategories: [
+    { id: "all",   label: "All",            description: "Everything I've built" },
+    { id: "apis",  label: "APIs",           description: "Services & endpoints powering products" },
+    { id: "infra", label: "Infrastructure", description: "Platforms, deploys & runtimes" },
+    { id: "tools", label: "Tools",          description: "Developer tooling & libraries" },
+    { id: "apps",  label: "Apps",           description: "Full-stack products & SaaS" },
   ],
   hackathons: [
     {
