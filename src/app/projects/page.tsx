@@ -6,13 +6,12 @@ import { DATA } from "@/data/resume";
 import { Badge } from "@/components/ui/badge";
 import { Icons } from "@/components/icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Globe, FolderGit2, Server, Cloud, Wrench, LayoutGrid } from "lucide-react";
+import { Globe, FolderGit2, Server, Cloud, Wrench } from "lucide-react";
 import { useState } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
 
 const CATEGORY_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  all: LayoutGrid,
   apis: Server,
   infra: Cloud,
   tools: Wrench,
@@ -32,7 +31,7 @@ function ProjectCard({ project, idx }: { project: ProjectLike; idx: number }) {
   return (
     <BlurFade delay={BLUR_FADE_DELAY * (1 + idx * 0.5)}>
       <div className="group relative flex gap-4 p-5 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm transition-all duration-300 hover:border-border hover:bg-card/70 hover:-translate-y-0.5">
-        <div className="flex-shrink-0 size-11 rounded-lg bg-muted/60 border border-border/60 flex items-center justify-center text-sm font-bold text-muted-foreground select-none overflow-hidden">
+        <div className="flex-shrink-0 size-11 rounded-lg bg-muted/60 border border-border/60 flex items-center justify-center text-sm font-bold font-sans text-muted-foreground select-none overflow-hidden">
           {project.image ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={project.image} alt={project.title} className="size-full object-cover" />
@@ -104,16 +103,14 @@ function ProjectCard({ project, idx }: { project: ProjectLike; idx: number }) {
 }
 
 export default function ProjectsPage() {
-  const [active, setActive] = useState("all");
-
   const categories = DATA.projectCategories;
   const projects = DATA.projects as readonly ProjectLike[];
+  const [active, setActive] = useState(categories[0].id);
 
-  const filtered =
-    active === "all" ? projects : projects.filter((p) => p.category === active);
+  const filtered = projects.filter((p) => p.category === active);
 
   const counts = categories.reduce<Record<string, number>>((acc, c) => {
-    acc[c.id] = c.id === "all" ? projects.length : projects.filter((p) => p.category === c.id).length;
+    acc[c.id] = projects.filter((p) => p.category === c.id).length;
     return acc;
   }, {});
 
@@ -124,13 +121,13 @@ export default function ProjectsPage() {
       <div className="space-y-1">
         <BlurFadeText
           delay={BLUR_FADE_DELAY}
-          className="text-3xl font-mono font-bold tracking-tight text-foreground"
-          text="projects"
+          className="text-3xl font-sans font-bold tracking-tight text-foreground"
+          text="Projects"
         />
         <BlurFadeText
           delay={BLUR_FADE_DELAY * 1.5}
-          className="text-muted-foreground font-mono text-sm"
-          text="things I've built — grouped by what they are"
+          className="text-muted-foreground font-sans text-sm"
+          text="Things I am building, or have built"
         />
       </div>
 
@@ -138,7 +135,7 @@ export default function ProjectsPage() {
         <Tabs value={active} onValueChange={setActive} className="w-full">
           <TabsList className="flex h-auto w-full flex-wrap justify-start gap-1 p-1">
             {categories.map((cat) => {
-              const Icon = CATEGORY_ICONS[cat.id] ?? LayoutGrid;
+              const Icon = CATEGORY_ICONS[cat.id] ?? FolderGit2;
               return (
                 <TabsTrigger
                   key={cat.id}

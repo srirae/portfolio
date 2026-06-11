@@ -67,7 +67,7 @@ export const DATA = {
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/projects", icon: FlaskConical, label: "Projects" },
     { href: "/experience", icon: Briefcase, label: "Experience" },
-    { href: "/resume", icon: FileText, label: "Resume" },
+    { href: "/resume.pdf", icon: FileText, label: "Resume", external: true },
     { href: "/extra", icon: Sparkles, label: "Extra" },
   ],
   contact: {
@@ -338,7 +338,6 @@ export const DATA = {
     },
   ],
   projectCategories: [
-    { id: "all",   label: "All",            description: "Everything I've built" },
     { id: "apis",  label: "APIs",           description: "Services & endpoints powering products" },
     { id: "infra", label: "Infrastructure", description: "Platforms, deploys & runtimes" },
     { id: "tools", label: "Tools",          description: "Developer tooling & libraries" },

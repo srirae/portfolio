@@ -23,7 +23,9 @@ export default function Navbar() {
         {DATA.navbar.map((item) => {
           const isHome = item.href === "/";
           const isActive = pathname === item.href;
-          const isExternal = item.href.startsWith("http");
+          const isExternal =
+            item.href.startsWith("http") ||
+            ("external" in item && item.external === true);
 
           const content = (
             <DockIcon className={`rounded-3xl cursor-pointer size-full p-0 backdrop-blur-3xl border transition-colors ${
