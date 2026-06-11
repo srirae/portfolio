@@ -112,19 +112,29 @@ export default function ResumePage() {
         <BlurFade delay={BLUR_FADE_DELAY * 12}>
           <h2 className="text-2xl font-bold tracking-tight">Skills & Technologies</h2>
         </BlurFade>
-        <div className="flex flex-wrap gap-2">
-          {DATA.skills.map((skill, idx) => {
-            const IconComponent = skill.icon;
-            return (
-              <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * (13 + idx)}>
-                <div className="flex items-center gap-1.5 rounded-xl border border-border/80 bg-card hover:bg-muted/50 px-3 py-1.5 text-sm font-medium text-foreground transition-all hover:scale-[1.03] shadow-sm select-none">
-                  {IconComponent && <IconComponent className="size-4 shrink-0 text-muted-foreground" />}
-                  <span>{skill.name}</span>
-                </div>
-              </BlurFade>
-            );
-          })}
-        </div>
+        <div className="space-y-6">
+  {Object.entries(DATA.skills).map(([category, skills]) => (
+    <div key={category}>
+      <h3 className="mb-2 font-semibold">{category}</h3>
+
+      <div className="flex flex-wrap gap-2">
+        {skills.map((skill) => {
+          const IconComponent = skill.icon;
+
+          return (
+            <div
+              key={skill.name}
+              className="flex items-center gap-1.5 rounded-xl border px-3 py-1.5"
+            >
+              {IconComponent && <IconComponent className="size-4" />}
+              <span>{skill.name}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  ))}
+</div>
       </section>
     </main>
   );
