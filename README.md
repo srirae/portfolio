@@ -1,1 +1,1 @@
-Its just my portfolio. (Under progress)
+Its just my portfolio.
