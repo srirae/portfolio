@@ -1,53 +1,88 @@
+# srirae.vercel.app
 
-# My Portfolio
+My personal portfolio. Built from scratch (well, from a Magic UI template I completely dismantled and rebuilt). Throughout the years I have had multiple portfolio but only this one has a mix of minamilism and classy.
 
-It is a portfolio from a template based of from magic ui. I add a lot of shadcn components and styled them.
+---
 
-## 🛠️ Tech Stack
+## What's in here
 
-* **Framework:** Next.js (App Router)
-* **Styling:** Tailwind CSS
-* **UI & Animations:** * [Shadcn UI](https://ui.shadcn.com/) (Custom styled primitives)
-  * [Magic UI](https://magicui.design/) (Animated components & layout)
-  * [Aceternity UI](https://ui.aceternity.com/) (Immersive visual effects)
-* **Icons:** Lucide React & Custom SVG Components
+| Section | What it shows |
+|---|---|
+| Hero/Main Section | Just a bio page |
+| Resume | Just a Jake's resume template |
+| Experience | Experience timeline with actual details |
+| Projects | Things I built and why they exist |
+| Contact | Ways to reach me |
 
-## 🚀 Getting Started
+---
 
-Follow these steps to get a local copy of the project up and running.
+## Tech
 
-### Prerequisites
+| Tool |
+|---|
+| **Next.js (App Router)** |
+| **Tailwind CSS** |
+| **Shadcn UI** |
+| **Magic UI** |
+| **Aceternity UI** |
+| **Lucide React** |
 
-Make sure you have Node.js installed on your machine.
+---
 
-### Installation
+## Run it locally
+
+You'll need **Node.js 18+**. That's it.
+
+```bash
+# 1. Clone it
+git clone https://github.com/srirae/portfolio.git
+cd portfolio
+
+# 2. Install deps
+npm i
+
+# 3. Start dev server
+npm run dev
+```
+
+Open `http://localhost:3000`. Should just work.
+
+---
+
+## To customize
+
+Everything that's "me" lives in one file:
+
+**`src/data/resume.tsx`**
+
+Open it and swap out the `DATA` object. Here's what's in there:
+
+| Key | What to change |
+|---|---|
+| `name`, `initials` | Your name |
+| `url` | Your deployed URL |
+| `summary` | Your one-paragraph bio |
+| `avatarUrl` | Path to your photo |
+| `contact.social` | GitHub, LinkedIn, X, etc. |
+| `work` | Your experience — company, role, dates, bullets |
+| `education` | School, degree, dates |
+| `projects` | Title, description, tech stack, links |
+| `skills` | The tech you actually know |
+
+Save the file → hot reload → done. No other config to touch.
+
+---
 
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/srirae/portfolio.git](https://github.com/srirae/portfolio.git)
-   cd portfolio
-   ```
+## The Base website
 
-2. **Install the dependancies**
-   ```bash
-   npm i
-   ```
+This started as a Magic UI template. I kept the bones, threw out most of the defaults, and rebuilt it. A lot of the Shadcn components are re-styled.
 
-3. **Run the project**
-   ```bash
-   npm run dev
-   ```
+---
 
+## Credits
 
-### ✍️ Customizing It For Yourself
-
-To swap out my information for yours:
-
-1. **Open the configuration file:** Navigate to `src/data/resume.tsx`.
-
-2. **Update the `DATA` object with your own details:** * **Profile:** Name, avatar, and social links.  
-   * **Experience:** Your custom `work` and `education` history arrays.  
-   * **Showcase:** Your own `projects` highlighting your specific tech stacks and live URLs.  
-
-3. **Save and deployed:** Save the file, and the site will instantly update!
+- [Magic UI](https://magicui.design/) — animated components and layout
+- [Shadcn UI](https://ui.shadcn.com/) — component primitives
+- [Aceternity UI](https://ui.aceternity.com/) — the flashy visual effects
+- [Lucide](https://lucide.dev/) — icons
